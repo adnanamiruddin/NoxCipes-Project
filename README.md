@@ -1,5 +1,3 @@
-![Logo](https://github.com/adnanamiruddin/NoxCipes-Project/blob/main/app/src/main/res/drawable/logo_noxcipes.png?raw=true)
-
 # NoxCipes
 NoxCipes merupakan aplikasi yang dirancang khusus untuk para pecinta kuliner vegetarian. Dengan NoxCipes, pengguna dapat menemukan berbagai resep masakan vegetarian yang lezat dan sehat, dilengkapi dengan bahan-bahan resep, instruksi langkah demi langkah yang mudah diikuti dan sebagainya.
 
@@ -48,6 +46,19 @@ NoxCipes merupakan aplikasi yang dirancang khusus untuk para pecinta kuliner veg
 - **Picasso**: Untuk pemuatan dan penanganan gambar.
 - **SQLite**: Untuk penyimpanan data lokal.
 
+
 ## Authors
 - [@adnanamiruddin](https://github.com/adnanamiruddin)
+
+
+## Referensi
+
+ - [Vegan Recipes API](https://rapidapi.com/rapihub-rapihub-default/api/the-vegan-recipes-db)
+ - [Desain](https://www.figma.com/design/WuYEjNHDj0DfsNJ4S47Zss/[FREE]-Recipely---Food-Recipe-Mobile-App-UI-Kit-(Community)?node-id=1-2&t=qaunO3uk09ZX9Zy9-0)
+ - [Gif Loading](https://id.pinterest.com/pin/57983913940715279/)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
