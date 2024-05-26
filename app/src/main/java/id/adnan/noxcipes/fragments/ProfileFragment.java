@@ -27,6 +27,7 @@ public class ProfileFragment extends Fragment {
     private EditText etProfileName;
     private EditText etProfileEmail;
     private EditText etProfilePassword;
+    private EditText etProfileConfirmPassword;
     private Button btnSaveProfile;
     private Button btnLogout;
     private SharedPreferences preferences;
@@ -46,6 +47,7 @@ public class ProfileFragment extends Fragment {
         etProfileName = view.findViewById(R.id.et_profile_name);
         etProfileEmail = view.findViewById(R.id.et_profile_email);
         etProfilePassword = view.findViewById(R.id.et_profile_password);
+        etProfileConfirmPassword = view.findViewById(R.id.et_profile_confirm_password);
         btnSaveProfile = view.findViewById(R.id.btn_save_profile);
         btnLogout = view.findViewById(R.id.btn_logout);
 
@@ -59,6 +61,7 @@ public class ProfileFragment extends Fragment {
                 etProfileName.setText(cursor.getString(cursor.getColumnIndexOrThrow("name")));
                 etProfileEmail.setText(cursor.getString(cursor.getColumnIndexOrThrow("email")));
                 etProfilePassword.setText(cursor.getString(cursor.getColumnIndexOrThrow("password")));
+                etProfileConfirmPassword.setText(cursor.getString(cursor.getColumnIndexOrThrow("password")));
             } while (cursor.moveToNext());
         }
 
@@ -68,6 +71,7 @@ public class ProfileFragment extends Fragment {
                 String name = etProfileName.getText().toString();
                 String email = etProfileEmail.getText().toString();
                 String password = etProfilePassword.getText().toString();
+                String confirmPassword = etProfileConfirmPassword.getText().toString();
 
                 if (name.isEmpty()) {
                     etProfileName.setError("Please enter your name");
@@ -75,6 +79,10 @@ public class ProfileFragment extends Fragment {
                     etProfileEmail.setError("Please enter your email");
                 } else if (password.isEmpty()) {
                     etProfilePassword.setError("Please enter your password");
+                } else if (confirmPassword.isEmpty()) {
+                    etProfileConfirmPassword.setError("Please enter your confirm password");
+                } else if (!password.equals(confirmPassword)) {
+                    etProfileConfirmPassword.setError("Password and confirm password must be same");
                 } else {
                     dbConfig.updateProfile(userId, name, email, password);
                     Toast.makeText(requireActivity(), "Profile updated", Toast.LENGTH_SHORT).show();

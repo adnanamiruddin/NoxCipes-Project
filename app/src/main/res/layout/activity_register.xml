@@ -119,7 +119,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/teal_900"
-                        android:hint="Konfirmasi Password"
+                        android:hint="Confirm Password"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:textColor="@color/black" />

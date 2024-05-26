@@ -96,6 +96,24 @@
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColorHint="@color/teal_900"
+                        app:boxBackgroundMode="none">
+
+                        <EditText
+                            android:id="@+id/et_profile_confirm_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/teal_900"
+                            android:hint="Confirm Password"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:textColor="@color/black" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <Button
                         android:id="@+id/btn_save_profile"
                         android:layout_width="match_parent"
