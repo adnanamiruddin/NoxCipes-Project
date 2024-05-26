@@ -44,7 +44,9 @@ public class SearchRecipesAdapter extends RecyclerView.Adapter<SearchRecipesAdap
         ArrayList<Recipe> filteredList = new ArrayList<>();
 
         for (Recipe recipe : recipesFull) {
-            if (recipe.getTitle().toLowerCase().contains(query.toLowerCase())) {
+            if (recipe.getTitle().toLowerCase().contains(query.toLowerCase())
+                    || recipe.getDifficulty().toLowerCase().contains(query.toLowerCase())
+            ) {
                 filteredList.add(recipe);
             }
         }
@@ -70,10 +72,7 @@ public class SearchRecipesAdapter extends RecyclerView.Adapter<SearchRecipesAdap
             @Override
             public void onClick(View v) {
                 RecipeDetailFragment recipeDetailFragment = new RecipeDetailFragment(recipe.getId());
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, recipeDetailFragment)
-                        .addToBackStack(null)
-                        .commit();
+                fragmentManager.beginTransaction().replace(R.id.fragment_container, recipeDetailFragment).addToBackStack(null).commit();
             }
         });
     }
