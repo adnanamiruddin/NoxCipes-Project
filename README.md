@@ -18,7 +18,7 @@ NoxCipes merupakan aplikasi yang dirancang khusus untuk para pecinta kuliner veg
 5. **My Favorite Recipes**: Daftar resep masakan yang sudah ditambahkan oleh user dapat diakses pada halaman daftar resep favorit yang sudah disediakan oleh NoxCipes. Halaman ini dapat diakses melalui item navigasi berbentuk "Love" yang terletak di bawah.
 6. **Profile**: Selain fitur utama seputar resep masakan vegetarian, NoxCipes juga menyediakan menu halaman profil agar user dapat memperbarui nama penggunanya di aplikasi, emailnya, hingga password akunnya.
 
-### Implementasi Teknis
+## Implementasi Teknis
 1. **Register and Login**: 
     - Data user yang melakukan registrasi akan disimpan di local database SQLite.
     - Pada saat user selesai registrasi maupun pada saat login, maka akan ada dua informasi yang disimpan pada SharedPreference. Yaitu:
