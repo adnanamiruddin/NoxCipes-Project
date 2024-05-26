@@ -41,10 +41,12 @@ NoxCipes merupakan aplikasi yang dirancang khusus untuk para pecinta kuliner veg
         - "is_logged_in" -> false
 
 ## Teknologi yang Digunakan
-- **Android SDK**: Aplikasi ini dibangun menggunakan Android SDK dan mengikuti pedoman desain material untuk antarmuka pengguna yang modern dan responsif.
+- **AndroidStudio Java**: Untuk pengembangan aplikasi Android.
 - **Retrofit**: Untuk koneksi jaringan dan pengambilan data dari API.
 - **Picasso**: Untuk pemuatan dan penanganan gambar.
 - **SQLite**: Untuk penyimpanan data lokal.
+- **SharedPreferences**: Untuk penyimpanan data kecil yang persisten.
+- **CardView**: Untuk menampilkan data dalam bentuk kartu dengan tata letak yang menarik.
 
 
 ## Authors
