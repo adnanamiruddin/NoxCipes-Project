@@ -22,25 +22,25 @@ NoxCipes merupakan aplikasi yang dirancang khusus untuk para pecinta kuliner veg
 
 ### Implementasi Teknis
 1. **Register and Login**: 
-- Data user yang melakukan registrasi akan disimpan di local database SQLite.
-- Pada saat user selesai registrasi maupun pada saat login, maka akan ada dua informasi yang disimpan pada SharedPreference. Yaitu:
-    - "is_logged_in" dengan tipe data boolean. Berguna agar jika user sudah login pada NoxCipes lalu user menutup aplikasi, maka saat aplikasi dibuka kembali, user langsung diarahkan ke halaman utama NoxCipes (tidak perlu login lagi).
-    - "user_id" dengan tipe data int. Berguna untuk menyimpan memori id user yang sedang login pada NoxCipes. Id ini dapat digunakan untuk mendapatkan informasi akun user, mendapatkan informasi id user pada saat menambah resep ke daftar favorit.
+    - Data user yang melakukan registrasi akan disimpan di local database SQLite.
+    - Pada saat user selesai registrasi maupun pada saat login, maka akan ada dua informasi yang disimpan pada SharedPreference. Yaitu:
+        - "is_logged_in" dengan tipe data boolean. Berguna agar jika user sudah login pada NoxCipes lalu user menutup aplikasi, maka saat aplikasi dibuka kembali, user langsung diarahkan ke halaman utama NoxCipes (tidak perlu login lagi).
+        - "user_id" dengan tipe data int. Berguna untuk menyimpan memori id user yang sedang login pada NoxCipes. Id ini dapat digunakan untuk mendapatkan informasi akun user, mendapatkan informasi id user pada saat menambah resep ke daftar favorit.
 2. **Home**:
-- Implementasi menggunakan RecyclerView untuk menampilkan daftar resep, CardView untuk desain card, dan Picasso untuk memuat gambar makanannya dari API.
+    - Implementasi menggunakan RecyclerView untuk menampilkan daftar resep, CardView untuk desain card, dan Picasso untuk memuat gambar makanannya dari API.
 3. **Tambahkan ke Daftar Favorit**:
-- Menggunakan SQLite yang sudah dikonfigurasikan melalui class DbConfig. Implementasi melalui method `DbConfig.insertFavorite(int userId, int recipeId)` untuk menyimpan daftar resep favorit user.
-- Data yang disimpan di dalam tabel favorit mencakup user_id dan recipe_id.
+    - Menggunakan SQLite yang sudah dikonfigurasikan melalui class DbConfig. Implementasi melalui method `DbConfig.insertFavorite(int userId, int recipeId)` untuk menyimpan daftar resep favorit user.
+    - Data yang disimpan di dalam tabel favorit mencakup user_id dan recipe_id.
 4. **Pencarian Resep (Search Recipe)**:
-- Implementasi pengelolaan hasil pencarian melalui method `.searchRecipe(String query)` yang ada pada SearchRecipesAdapter. Menggunakan fungsi bawaan Java untuk mengelola persamaan text yang diinput dengan hasil filter data.
+    - Implementasi pengelolaan hasil pencarian melalui method `.searchRecipe(String query)` yang ada pada SearchRecipesAdapter. Menggunakan fungsi bawaan Java untuk mengelola persamaan text yang diinput dengan hasil filter data.
 6. **My Favorite Recipes**:
-- Implementasi menggunakan RecyclerView untuk menampilkan daftar resep favorit dari database SQLite yang sudah dikonfigurasikan melalui class DbConfig.
-- Mendapatkan informasi daftar resep favorit apa saja yang dimiliki user melalu method `DbConfig.getFavoritesByUserId(int userId)`.
+    - Implementasi menggunakan RecyclerView untuk menampilkan daftar resep favorit dari database SQLite yang sudah dikonfigurasikan melalui class DbConfig.
+    - Mendapatkan informasi daftar resep favorit apa saja yang dimiliki user melalu method `DbConfig.getFavoritesByUserId(int userId)`.
 7. **Profile**:
-- Menggunakan SQLite yang sudah dikonfigurasikan melalui class DbConfig. Implementasi memperbarui data user melalui method `DbConfig.updateProfile(int userId, String name, String email, String password)`.
-- Ketika tombol "Logout" diklik, maka informasi pada SharedPreference akan diperbarui.
-    - "user_id" -> null
-    - "is_logged_in" -> false
+    - Menggunakan SQLite yang sudah dikonfigurasikan melalui class DbConfig. Implementasi memperbarui data user melalui method `DbConfig.updateProfile(int userId, String name, String email, String password)`.
+    - Ketika tombol "Logout" diklik, maka informasi pada SharedPreference akan diperbarui.
+        - "user_id" -> null
+        - "is_logged_in" -> false
 
 ## Teknologi yang Digunakan
 - **Android SDK**: Aplikasi ini dibangun menggunakan Android SDK dan mengikuti pedoman desain material untuk antarmuka pengguna yang modern dan responsif.
@@ -49,6 +49,5 @@ NoxCipes merupakan aplikasi yang dirancang khusus untuk para pecinta kuliner veg
 - **SQLite**: Untuk penyimpanan data lokal.
 
 ## Authors
-
 - [@adnanamiruddin](https://github.com/adnanamiruddin)
 
