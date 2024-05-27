@@ -32,7 +32,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
-    private String apiKey = "93181b98d6mshf93653b16bf5cbcp1da356jsnf7b6c9615a0b";
+    private String apiKey = "181a8b5e4fmsh489e90afab480d3p10f137jsn76a17b77b8f5";
     private String apiHost = "the-vegan-recipes-db.p.rapidapi.com";
     private View homeLoadingView;
     private TextView tvHomeFullName;
