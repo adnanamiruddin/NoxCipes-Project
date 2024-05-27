@@ -70,8 +70,8 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        app:cardCornerRadius="10dp">
+                        android:layout_marginTop="8dp"
+                        app:cardCornerRadius="5dp">
 
                         <TextView
                             android:id="@+id/tv_recipe_difficulty"
@@ -79,11 +79,10 @@
                             android:layout_height="wrap_content"
                             android:background="@color/teal_500"
                             android:paddingHorizontal="12dp"
-                            android:paddingVertical="5dp"
+                            android:paddingVertical="2dp"
                             android:text="Kesulitan"
                             android:textColor="@color/white"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textSize="14sp" />
                     </androidx.cardview.widget.CardView>
 
                     <TextView
