@@ -41,7 +41,11 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    // CardView
     implementation("androidx.cardview:cardview:1.0.0")
+
+    // Gif
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -50,7 +54,4 @@ dependencies {
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
     implementation("com.squareup.picasso:picasso:2.71828")
-
-    // Gif
-    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.17")
 }
