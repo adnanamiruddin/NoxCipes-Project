@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +29,7 @@ public class ProfileFragment extends Fragment {
     private EditText etProfileEmail;
     private EditText etProfilePassword;
     private EditText etProfileConfirmPassword;
+    private TextView tvErrorMessage;
     private Button btnSaveProfile;
     private Button btnLogout;
     private SharedPreferences preferences;
@@ -48,6 +50,7 @@ public class ProfileFragment extends Fragment {
         etProfileEmail = view.findViewById(R.id.et_profile_email);
         etProfilePassword = view.findViewById(R.id.et_profile_password);
         etProfileConfirmPassword = view.findViewById(R.id.et_profile_confirm_password);
+        tvErrorMessage = view.findViewById(R.id.tv_profile_error_message);
         btnSaveProfile = view.findViewById(R.id.btn_save_profile);
         btnLogout = view.findViewById(R.id.btn_logout);
 
@@ -84,15 +87,20 @@ public class ProfileFragment extends Fragment {
                 } else if (!password.equals(confirmPassword)) {
                     etProfileConfirmPassword.setError("Password and confirm password must be same");
                 } else {
-                    dbConfig.updateProfile(userId, name, email, password);
-                    Toast.makeText(requireActivity(), "Profile updated", Toast.LENGTH_SHORT).show();
-                    getParentFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.fragment_container, new HomeFragment())
-                            .commit();
-                    // Activate menu item home
-                    BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottom_navigation);
-                    bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                    try {
+                        dbConfig.updateProfile(userId, name, email, password);
+                        Toast.makeText(requireActivity(), "Profile updated", Toast.LENGTH_SHORT).show();
+                        getParentFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment_container, new HomeFragment())
+                                .commit();
+                        // Activate menu item home
+                        BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottom_navigation);
+                        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                    } catch (Exception e) {
+                        tvErrorMessage.setVisibility(View.VISIBLE);
+                        Toast.makeText(requireActivity(), "Email already registered", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
