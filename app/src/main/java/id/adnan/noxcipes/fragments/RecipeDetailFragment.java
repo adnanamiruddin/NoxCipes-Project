@@ -36,7 +36,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RecipeDetailFragment extends Fragment {
-    private String apiKey = "9d2af32623msh23f8fd8a64896afp165e61jsn66cf318f7d48";
+    private String apiKey = "93181b98d6mshf93653b16bf5cbcp1da356jsnf7b6c9615a0b";
     private String apiHost = "the-vegan-recipes-db.p.rapidapi.com";
     private int recipeId;
     private View recipeDetailLoadingView;
